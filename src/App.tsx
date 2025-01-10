@@ -14,9 +14,9 @@ const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
 export const App = () => {
   // not relevant to debugging til line 39: metamask connection + inital setup
   const [account, setAccount] = useState<string>();
-  const [address, setAddress] = useState<number | string>('0x29a634a2bed4346fce5e3ef9ff647844cc9f1375');
+  const [address, setAddress] = useState<number | string>("");
   const [data, setData] = useState<string>();
-  const [collectionId, setColletionId] = useState<number>(336);
+  const [collectionId, setColletionId] = useState<number>(0);
 
   const { sdk, connected, provider, chainId } = useSDK();
 
