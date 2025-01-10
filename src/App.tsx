@@ -89,8 +89,12 @@ export const App = () => {
     await dataProtectorSharing.removeProtectedDataFromCollection({protectedData: address.toString()})
   }
 
-  const getData = async() =>{
+  const buyProtectedData = async() => {
     await dataProtectorSharing.buyProtectedData({protectedData: address.toString(), price: 0})
+    console.log('bought')
+  }
+
+  const getData = async() =>{
     
     const {result} = await dataProtectorSharing.consumeProtectedData({
       protectedData: address.toString(),
@@ -143,6 +147,10 @@ export const App = () => {
               removeFromCollection
             </button>
           </div>
+
+          <button onClick={()=>buyProtectedData()}>
+            buyProtectedData
+          </button>
           
           <button onClick={()=>getData()}>
             data from iexec sidechain {JSON.stringify(data)}
